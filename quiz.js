@@ -348,3 +348,60 @@ for (let i = 0; i < optionsElements.length; i++) {
 
 nextButton.addEventListener("click", showNextQuestion);
 restartButton.addEventListener("click", restartQuiz); // attach an event to the restart button
+
+document.addEventListener('DOMContentLoaded', function() {
+  var themeSelector = document.getElementById('theme-selector');
+
+  themeSelector.addEventListener('change', function() {
+    var buttons = document.getElementsByTagName('button');
+    var quizContainers = document.getElementsByClassName('quiz-container');
+
+    // Remove the existing theme class from the body
+    document.body.classList.remove('theme-default', 'theme-dark');
+    for (var i = 0; i < quizContainers.length; i++) {
+        quizContainers[i].classList.remove('theme-default', 'theme-dark');
+    }
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('theme-default', 'theme-dark');
+    }
+
+    // Add the selected theme class to the body, quizContainers, and buttons
+    document.body.classList.add(this.value);
+    for (var i = 0; i < quizContainers.length; i++) {
+        quizContainers[i].classList.add(this.value);
+    }
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.add(this.value);
+    }
+
+    // Save the selected theme in local storage
+    localStorage.setItem('selectedTheme', this.value);
+  });
+
+  // Load the saved theme from local storage (if any)
+  var savedTheme = localStorage.getItem('selectedTheme');
+  if (savedTheme) {
+    var buttons = document.getElementsByTagName('button'); // Get all button elements
+    var quizContainers = document.getElementsByClassName('quiz-container');
+
+    document.body.classList.remove('theme-default', 'theme-dark');
+    for (var i = 0; i < quizContainers.length; i++) {
+        quizContainers[i].classList.remove('theme-default', 'theme-dark');
+    }
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('theme-default', 'theme-dark');
+    }
+
+    // Add the saved theme class to the body
+    document.body.classList.add(savedTheme);
+    for (var i = 0; i < quizContainers.length; i++) {
+        quizContainers[i].classList.add(savedTheme);
+    }
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.add(savedTheme);
+    }
+
+    // Set the dropdown menu's value to the saved theme
+    themeSelector.value = savedTheme;
+  }
+});
