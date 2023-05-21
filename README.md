@@ -1,4 +1,7 @@
-# Quiz App
+# Fun Quiz App
+
+![image](https://github.com/EleoXDA/Quiz_JS/assets/27622683/7a1058b1-ccc6-4098-b8bf-0bca9903bab8)
+
 This repository contains a simple quiz app built with HTML, CSS, and JavaScript. The app presents a series of multiple-choice questions to the user, tracks the user's score, and allows the user to navigate between questions.
 
 ## File Structure
