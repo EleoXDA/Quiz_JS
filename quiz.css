@@ -3,6 +3,36 @@ body {
   font-family: Arial, sans-serif;
 }
 
+
+@media (max-width: 768px) {
+  .quiz-container {
+    max-width: 90%;
+    padding: 10px;
+  }
+  
+  .options-container {
+    display: block;
+  }
+  
+  .option {
+    margin: 5px 0; /* stacked options vertically */
+    padding: 10px;
+  }
+  
+  #next-button, #restart-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  h1, h2, h3 {
+    font-size: 1.2em;
+  }
+  
+  .score-container {
+    font-size: 1em;
+  }
+}
+
 .quiz-container {
   max-width: 600px;
   margin: 50px auto;
