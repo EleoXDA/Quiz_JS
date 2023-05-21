@@ -122,6 +122,10 @@ h1, h2, h3 {
   color: #000;
 }
 
+.theme-default #question {
+  color: #000;
+}
+
 .theme-default #next-button:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   background-color: rgb(179, 228, 245);
